@@ -20,4 +20,4 @@ artigo/*.synctex.gz
 # run logs and the resume cache of analise/02_validacao.py
 resultados/log_*.txt
 resultados/validacao_cache.jsonl
-nome_da_pasta/
+artigo/

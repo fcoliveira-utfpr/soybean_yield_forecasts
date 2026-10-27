@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌱 Soybean Yield Forecasting in Western Paraná, Brazil
 
 ### Season-blocked validation, spatio-temporal error structure and shortfall risk
@@ -207,3 +208,6 @@ The article is in preparation. Until it is published, please cite this repositor
 > Tluszcz J (2025) Modelos de regressão aplicados a dados climatológicos de reanálise e índices vegetativos
 > para predição de produtividade da soja. Undergraduate thesis, Universidade Tecnológica Federal do Paraná,
 > Medianeira.
+=======
+# soybean_yield_forecasts
+>>>>>>> 7a9d5435260944d4acc504751e905cfbe52f2448

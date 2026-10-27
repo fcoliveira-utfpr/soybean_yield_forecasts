@@ -1,0 +1,38 @@
+%% Material suplementar do artigo SERRA (soja, Oeste do Paraná).
+%% As tabelas vêm de tabelas_suplementares.tex, gerado por ../analise/06_suplementar.py -- não editar à mão.
+%% Compilar: latexmk -pdf supplementary.tex
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\inserir}[1]{\textcolor{red}{[INSERIR #1]}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thesection}{S\arabic{section}}
+
+\title{Supplementary material for\\ ``Season-blocked validation, error structure and shortfall risk of soybean yield forecasts from satellite and reanalysis data in western Paraná, Brazil''}
+\author{Julia Tluszcz, Pedro Luiz de Paula Filho, Fabrício Correia de Oliveira}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\input{tabelas_suplementares}
+
+\section{Spatial dependence of the residuals}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figuras/figS1_moran_variograma.png}
+\caption{(a) Moran's $I$ of the LOSO residuals of ridge regression by season, with six-nearest-neighbour weights and 999 permutations; (b) empirical semivariogram of the within-season residuals pooled over seasons, in 15-km distance classes with at least 20 pairs, and fitted exponential model.}
+\label{fig:S_moran}
+\end{figure}
+
+\end{document}

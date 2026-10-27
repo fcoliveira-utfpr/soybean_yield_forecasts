@@ -1,0 +1,22 @@
+,valor
+fracao_var_residuo_comum_safra,0.3892991193357236
+R2_anomalia_regional,0.7650980798755946
+corr_anomalia_regional,0.875730254291004
+R2_anomalia_intra_safra,0.1669085271786287
+moran_mediana,0.30911256442430507
+moran_n_signif_5pct,22
+cobertura_municipal_90,0.8938775510204081
+cobertura_municipal_min_safra,0.4897959183673469
+safra_pior_cobertura,2021
+cobertura_regional_iid,0.32
+cobertura_regional_bloco,0.84
+largura_regional_iid,221.03280950885033
+largura_regional_bloco,999.4281821815779
+freq_quebra,0.16408163265306122
+brier,0.06994743899225664
+brier_clim,0.14371066453792403
+brier_skill,0.5132759338552908
+auc_quebra,0.9416418882151742
+safras_com_quebra_generalizada,"[2004, 2006, 2009, 2012, 2022]"
+skill_mun_mediana,0.6430629631006204
+n_mun_skill_pos,42

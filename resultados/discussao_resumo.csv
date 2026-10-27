@@ -1,0 +1,27 @@
+,valor
+corr_anom_ONI_ASO,0.12242175724414393
+corr_anom_ONI_SON,0.1398300610830022
+corr_anom_ONI_NDJ,0.16609679610506048
+n_El Niño,9
+anom_media_El Niño,4.465492859476744
+n_La Niña,8
+anom_media_La Niña,-2.9350670092871836
+n_Neutral,8
+anom_media_Neutral,-1.1955859878184831
+quebras_em_la_nina,"2012, 2022"
+quebras_total,"2004 (Neutral), 2006 (Neutral), 2009 (Neutral), 2012 (La Niña), 2019 (El Niño), 2022 (La Niña)"
+skill_F1,-0.023577001984377066
+skill_F1+ONI,-0.01475994693385796
+skill_F1-F4,0.5825755181346852
+skill_F1-F4+ONI,0.5798669583457858
+icc_anomalia_observada,0.7283366010115435
+efeito_delineamento_anomalia_observada,35.96015684855409
+n_efetivo_anomalia_observada,34.0654798909548
+icc_residuo_modelo,0.395892245759268
+efeito_delineamento_residuo_modelo,20.002827796444866
+n_efetivo_residuo_modelo,61.24134109766826
+rRMSE_municipal,15.430326666774786
+R2_microrregiao,0.7090239929385573
+rRMSE_microrregiao,11.653143430746281
+R2_regional,0.7408451708830253
+rRMSE_regional,9.649006850419015

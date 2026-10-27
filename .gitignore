@@ -1,0 +1,23 @@
+# environment and caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.claude/
+
+# LaTeX build files
+artigo/*.aux
+artigo/*.bbl
+artigo/*.blg
+artigo/*.fdb_latexmk
+artigo/*.fls
+artigo/*.log
+artigo/*.out
+artigo/*.toc
+artigo/*.synctex.gz
+
+# run logs and the resume cache of analise/02_validacao.py
+resultados/log_*.txt
+resultados/validacao_cache.jsonl
+nome_da_pasta/

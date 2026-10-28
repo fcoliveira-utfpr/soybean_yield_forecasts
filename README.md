@@ -24,13 +24,13 @@ phase, and asks how the **dependence between municipalities of the same season**
 3. the calibration of prediction intervals;
 4. the forecast of **yield shortfall risk**.
 
-The work extends the undergraduate thesis of Julia Tluszcz (UTFPR Medianeira, 2025). The thesis dataset is
-kept in `dados/tcc/` for comparison.
+The work extends the undergraduate thesis of Julia Tluszcz (UTFPR Medianeira, 2025).
 
 **Authors**
 - Julia Tluszcz, Universidade Tecnológica Federal do Paraná (UTFPR), Medianeira
 - Pedro Luiz de Paula Filho, UTFPR, Medianeira
 - Fabrício Correia de Oliveira, UTFPR, Santa Helena (corresponding author)
+- Cleber Cisne Catão
 
 ---
 

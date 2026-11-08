@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 # 🌱 Soybean Yield Forecasting in Western Paraná, Brazil
 
 ### Season-blocked validation, spatio-temporal error structure and shortfall risk
 
-<!-- provisional repository name: update "soybean_west_pr" in the visitor counter once the repository is created -->
-![Visitor Count](https://komarev.com/ghpvc/?username=fcoliveira-utfpr&repo=soybean_west_pr&label=Visitors&color=0e75b6&style=flat)
+![Visitor Count](https://komarev.com/ghpvc/?username=fcoliveira-utfpr&repo=soybean_yield_forecasts&label=Visitors&color=0e75b6&style=flat)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![Earth Engine](https://img.shields.io/badge/Google%20Earth%20Engine-data-34A853?logo=googleearth&logoColor=white)
 ![Satellite](https://img.shields.io/badge/satellite-MODIS%20%C2%B7%20Landsat-2e7d32)
@@ -12,7 +10,7 @@
 ![Yield](https://img.shields.io/badge/yield-IBGE%2FPAM-6c757d)
 ![Status](https://img.shields.io/badge/article-in%20preparation-orange)
 
-Code, data and manuscript of an article in preparation for *Stochastic Environmental Research and Risk
+Code and data of an article in preparation for *Stochastic Environmental Research and Risk
 Assessment* (Springer).
 
 The study forecasts the **soybean yield of 49 municipalities of western Paraná, Brazil, for the harvests of
@@ -30,7 +28,7 @@ The work extends the undergraduate thesis of Julia Tluszcz (UTFPR Medianeira, 20
 - Julia Tluszcz, Universidade Tecnológica Federal do Paraná (UTFPR), Medianeira
 - Pedro Luiz de Paula Filho, UTFPR, Medianeira
 - Fabrício Correia de Oliveira, UTFPR, Santa Helena (corresponding author)
-- Cleber Cisne Catão
+- Maria Laura Alegre de Souza Garcia, UTFPR, Medianeira
 
 ---
 
@@ -121,12 +119,11 @@ flowchart LR
     S2 --> S7["07_discussao.py"]
     O --> S7
     S4["04_diagramas.py"] --> FIG
-    S3 --> FIG["📊 figuras/ · artigo/figuras/"]
+    S3 --> FIG["📊 figuras/"]
     S5 --> FIG
     S2 --> S6["06_suplementar.py"]
     S5 --> S6
-    FIG --> P["📄 artigo/main.tex"]
-    S6 --> Q["📄 artigo/supplementary.tex"]
+    S6 --> Q["📄 supplementary tables"]
 ```
 
 ## 📁 Repository structure
@@ -153,13 +150,13 @@ flowchart LR
 │   └── oni.csv                    #   Oceanic Niño Index (NOAA CPC)
 ├── resultados/                    # datasets, out-of-sample forecasts and result tables (CSV)
 ├── figuras/                       # figures (PNG, 300 dpi)
-├── artigo/                        # manuscript (Springer Nature sn-jnl), supplementary material, bibliography
 ├── requirements.txt
 └── README.md
 ```
 
 Folder and script names are in Portuguese: `analise` = analysis, `dados` = data, `resultados` = results,
-`figuras` = figures, `artigo` = manuscript, `safra` = season, `tcc` = undergraduate thesis.
+`figuras` = figures, `safra` = season, `tcc` = undergraduate thesis. The manuscript is not part of this
+repository; the scripts also copy figures and supplementary tables to a local `artigo/` folder, created when needed.
 
 ## ▶️ Reproducing the study
 
@@ -181,8 +178,6 @@ python3.13 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python analise/06_suplementar.py
 .venv/bin/python analise/07_discussao.py
 
-# manuscript
-cd artigo && latexmk -pdf main.tex && latexmk -pdf supplementary.tex
 ```
 
 The Earth Engine extraction is already cached in `dados/gee/`, so the analyses can be reproduced without an
@@ -208,6 +203,3 @@ The article is in preparation. Until it is published, please cite this repositor
 > Tluszcz J (2025) Modelos de regressão aplicados a dados climatológicos de reanálise e índices vegetativos
 > para predição de produtividade da soja. Undergraduate thesis, Universidade Tecnológica Federal do Paraná,
 > Medianeira.
-=======
-# soybean_yield_forecasts
->>>>>>> 7a9d5435260944d4acc504751e905cfbe52f2448

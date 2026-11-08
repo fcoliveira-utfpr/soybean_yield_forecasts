@@ -32,6 +32,7 @@ warnings.filterwarnings('ignore')
 RAIZ = Path(__file__).resolve().parents[1]
 RES, FIG = RAIZ / 'resultados', RAIZ / 'figuras'
 FIG.mkdir(exist_ok=True)
+(RAIZ / 'artigo/figuras').mkdir(parents=True, exist_ok=True)   # pasta do manuscrito, fora do repositório
 GEO = RAIZ / 'dados/malha_municipios_pr.geojson'
 
 VERDE, LARANJA, CINZA, TINTA = '#1b7837', '#eb6834', '#8a8984', '#52514e'

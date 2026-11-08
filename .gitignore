@@ -21,3 +21,7 @@ artigo/*.synctex.gz
 resultados/log_*.txt
 resultados/validacao_cache.jsonl
 artigo/
+artigo_overleaf.zip
+
+# artigos de terceiros (direitos autorais) colocados na raiz para leitura
+/*.pdf

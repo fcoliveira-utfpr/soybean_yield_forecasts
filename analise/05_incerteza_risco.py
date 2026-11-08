@@ -29,6 +29,7 @@ val = import_module('02_validacao')
 warnings.filterwarnings('ignore')
 RAIZ = Path(__file__).resolve().parents[1]
 RES, FIG = RAIZ / 'resultados', RAIZ / 'figuras'
+(RAIZ / 'artigo/figuras').mkdir(parents=True, exist_ok=True)   # pasta do manuscrito, fora do repositório
 VERDE, VERDE_CL, MARROM, LARANJA, CINZA, TINTA = '#1b7837', '#74c476', '#8c510a', '#eb6834', '#8a8984', '#52514e'
 plt.rcParams.update({'font.size': 9, 'axes.spines.top': False, 'axes.spines.right': False, 'axes.grid': True,
                      'axes.axisbelow': True, 'grid.color': '#e4e3df', 'grid.linewidth': 0.6,

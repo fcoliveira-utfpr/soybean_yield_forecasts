@@ -14,6 +14,7 @@ import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[1]
 RES, ART = RAIZ / 'resultados', RAIZ / 'artigo'
+(RAIZ / 'artigo/figuras').mkdir(parents=True, exist_ok=True)   # pasta do manuscrito, fora do repositório
 VERDE, CINZA, TINTA, LARANJA = '#1b7837', '#8a8984', '#52514e', '#eb6834'
 plt.rcParams.update({'font.size': 9, 'axes.spines.top': False, 'axes.spines.right': False, 'axes.grid': True,
                      'axes.axisbelow': True, 'grid.color': '#e4e3df', 'grid.linewidth': 0.6,

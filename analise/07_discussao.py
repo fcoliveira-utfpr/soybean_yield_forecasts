@@ -37,7 +37,8 @@ reg['anom_rel'] = 100 * (reg['prod'] / reg['tend'] - 1)
 reg = reg.reset_index().merge(enso, on='safra')
 for c in ['ONI_ASO', 'ONI_SON', 'ONI_NDJ']:
     saida[f'corr_anom_{c}'] = reg['anom_rel'].corr(reg[c])
-reg['fase_enso'] = np.select([reg['ONI_SON'] <= -0.5, reg['ONI_SON'] >= 0.5], ['La Niña', 'El Niño'], 'Neutral')
+# fase pelo trimestre de pico da safra (nov-jan), limiar de +-0,5 do ONI
+reg['fase_enso'] = np.select([reg['ONI_NDJ'] <= -0.5, reg['ONI_NDJ'] >= 0.5], ['La Niña', 'El Niño'], 'Neutral')
 g = reg.groupby('fase_enso')['anom_rel'].agg(['count', 'mean', 'min'])
 for f in g.index:
     saida[f'n_{f}'] = int(g.loc[f, 'count']); saida[f'anom_media_{f}'] = g.loc[f, 'mean']
@@ -46,10 +47,13 @@ saida['quebras_total'] = ', '.join(f"{s} ({f})" for s, f in reg.loc[reg['anom_re
 reg.to_csv(RES / 'enso.csv', index=False)
 
 # ganho do ONI como preditor antecipado (fase F1 + ONI de ago-out) e na safra completa
-b = val.base.merge(enso[['safra', 'ONI_ASO']], on='safra')
+b = val.base.merge(enso[['safra', 'ONI_ASO', 'ONI_NDJ']], on='safra')
 ESTAT = ['argila', 'areia', 'latitude', 'longitude', 'altitude_m', 'area_soja_ha']
 f1 = ESTAT + [c for c in val.FEATS if c.endswith('_F1')]
-for nome, fs in [('F1', f1), ('F1+ONI', f1 + ['ONI_ASO']), ('F1-F4', val.FEATS), ('F1-F4+ONI', val.FEATS + ['ONI_ASO'])]:
+f13 = ESTAT + [c for c in val.FEATS if any(c.endswith(f'_F{k}') for k in (1, 2, 3))]
+# ONI de ago-out: disponível no fim de outubro; ONI de nov-jan: disponível no início de fevereiro
+for nome, fs in [('F1', f1), ('F1+ONI_ASO', f1 + ['ONI_ASO']), ('F1-F3', f13), ('F1-F3+ONI_NDJ', f13 + ['ONI_NDJ']),
+                 ('F1-F4', val.FEATS), ('F1-F4+ONI_NDJ', val.FEATS + ['ONI_NDJ'])]:
     oo = val.oof('safra_fora', 'Ridge', d=b, feats=fs)
     saida[f'skill_{nome}'] = val.metricas(oo)['skill_tend']
     print(nome, round(saida[f'skill_{nome}'], 3), flush=True)
@@ -70,6 +74,17 @@ saida['rRMSE_microrregiao'] = 100 * np.sqrt(np.mean((m['prod'] - m['pred']) ** 2
 r = o.groupby('safra')[['prod', 'pred']].mean()
 saida['R2_regional'] = r2_score(r['prod'], r['pred'])
 saida['rRMSE_regional'] = 100 * np.sqrt(np.mean((r['prod'] - r['pred']) ** 2)) / r['prod'].mean()
+
+# ---------------------------------------------------------------- 4. correlação dentro da safra: absoluta x anomalia
+o['anom'], o['anom_p'] = o['prod'] - o['tend'], o['pred'] - o['tend']
+gs = o.groupby('safra')
+rs = pd.DataFrame({'r_absoluta': gs.apply(lambda d: np.corrcoef(d['prod'], d['pred'])[0, 1]),
+                   'r_so_tendencia': gs.apply(lambda d: np.corrcoef(d['prod'], d['tend'])[0, 1]),
+                   'r_anomalia': gs.apply(lambda d: np.corrcoef(d['anom'], d['anom_p'])[0, 1])})
+rs.to_csv(RES / 'r_dentro_safra.csv')
+for c in rs:
+    saida[f'{c}_mediana'] = rs[c].median()
+saida['r_anomalia_min'], saida['r_anomalia_max'] = rs['r_anomalia'].min(), rs['r_anomalia'].max()
 
 pd.Series(saida).to_csv(RES / 'discussao_resumo.csv', header=['valor'])
 print(pd.Series(saida).to_string())

@@ -10,6 +10,7 @@ from matplotlib.patches import FancyBboxPatch, Patch
 
 RAIZ = Path(__file__).resolve().parents[1]
 FIG = RAIZ / 'figuras'
+(RAIZ / 'artigo/figuras').mkdir(parents=True, exist_ok=True)   # pasta do manuscrito, fora do repositório
 VERDE, VERDE_CL, NEUTRO, TINTA, CINZA = '#1b7837', '#bae4b3', '#f0efec', '#52514e', '#8a8984'
 plt.rcParams.update({'font.size': 9, 'savefig.dpi': 300, 'savefig.bbox': 'tight'})
 

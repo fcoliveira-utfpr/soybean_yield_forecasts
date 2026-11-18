@@ -10,8 +10,7 @@
 ![Yield](https://img.shields.io/badge/yield-IBGE%2FPAM-6c757d)
 ![Status](https://img.shields.io/badge/article-in%20preparation-orange)
 
-Code and data of an article in preparation for *Stochastic Environmental Research and Risk
-Assessment* (Springer).
+Code and data of an article in preparation.
 
 The study forecasts the **soybean yield of 49 municipalities of western Paraná, Brazil, for the harvests of
 2001 to 2025**. It uses MODIS vegetation indices and ERA5-Land and CHIRPS weather, aggregated by phenological
